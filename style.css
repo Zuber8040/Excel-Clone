@@ -48,10 +48,21 @@ body{
     display: flex;
     align-items: center;
 }
+.formula-action-cont > *{
+    display: inline-block;
+    margin-right: 0.5rem;
+}
 .formula-icon{
     /* height: 1.2rem; */
     width: 1.2rem;
 } 
+.address-bar{
+   width: 5rem;
+}
+
+.formula-bar{
+    width: cal( 100vw - 5rem );
+}
 .formula-action-cont > input{
     border: none;
     outline: none;
