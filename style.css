@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;  
+}
+.page-actions-cont{
+    height: 3rem;
+    background-color:#2ed573;
+    display: flex;
+    align-items: flex-end;
+}
+.page-action{
+    margin: 0.5rem;
+    color:#ffffff;
+}
+
+.font-family-prop{
+    padding: 0.2rem;
+}
+.font-size-prop{
+    padding: 00.2rem;
+}
+
+.cellprops-actions-cont{
+    height: 3rem;
+    background-color: lightsalmon;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+.cellprops-actions-cont>*{
+    display: inline-block;
+    margin: 00.5rem;
+    margin-right: 1rem;
+}
+.cellprops-actions-cont > select{
+    border: none;
+    border-radius: 1px;
+    outline:none;
+}
+.formula-action-cont{
+    height: 3rem;
+    background-color: lightblue;
+
+}
+
+.sheet-action-cont{
+    height: 3rem;
+    background-color: lightcoral;
+}
+.grid-cont{
+    height: calc(100vh-12rem);
+}   
+.sheets-folder-cont{
+    height: 1rem;
+    width: 5rem;
+    background-color: yellow;
+    display: inline-block;
+}

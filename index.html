@@ -1,27 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="./script.js"></script>
+    <!-- Material Icon -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Font family link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--  -->
+    
     <title>Excel</title>
-</head>
-<body>
-
-<!--
+  </head>
+  <body>
+    <!--
     Step 1 : git add .
     step 2: git commit -m "first commit"
     step 3 : git push -u origin main
   -->
 
-<!-- Lets start  excel clone  -->
-  <div class="page-actions-cont"></div>
-  <div class="cellprops-actions-cont"></div>
-  <div class="formula-action-cont"></div>
-  <div class="grid-cont"></div>
-  <div class="sheet-cont"></div>
-
-</body>
+    <!-- Lets start  excel clone  -->
+    <div class="page-actions-cont">
+      <div class="page-action">Home</div>
+      <div class="page-action">File</div>
+      <div class="page-action">Insert</div>
+      <div class="page-action">Layout</div>
+      <div class="page-action">Help</div>
+    </div>
+    <div class="cellprops-actions-cont">
+        <span class="material-icons">
+            content_copy
+            </span>
+    <span class="material-icons">
+content_cut
+</span>
+      <span class="material-icons">
+        content_paste
+        </span>
+    <select class="font-family-prop">
+        <option value="monospace">Monospace</option>
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="cursive">Cursive  </option>
+    </select>
+    <select class="font-size-prop">
+      <option value="14">14</option>
+      <option value="16">16</option>
+      <option value="18">18</option>
+      <option value="20">20</option>
+    </select>
+      <span class="material-icons"> format_bold </span>
+      <span class="material-icons"> format_italic </span>
+      <span class="material-icons"> format_underlined </span>
+      <span class="material-icons"> format_align_left </span>
+      <span class="material-icons"> format_align_center </span>
+      <span class="material-icons"> format_align_right </span>
+    </div>
+    <div class="formula-action-cont"></div>
+    <div class="grid-cont"></div>
+    <div class="sheet-action-cont">
+      <span class="material-icons">
+        post_add
+        </span>
+        <div class="sheets-folder-cont">
+          
+        </div>
+    </div>
+  </body>
 </html>
