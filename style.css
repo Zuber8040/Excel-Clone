@@ -19,6 +19,7 @@ body{
 
 .font-family-prop{
     padding: 0.2rem;
+    
 }
 .font-size-prop{
     padding: 00.2rem;
@@ -42,8 +43,8 @@ body{
     outline:none;
 }
 .formula-action-cont{
-    height: 3rem;
-    background-color: lightblue;
+    height: 2rem;
+    background-color:#ecf0f1;
     padding-left: 1rem;
     display: flex;
     align-items: center;
@@ -61,11 +62,12 @@ body{
 }
 
 .formula-bar{
-    width: cal( 100vw - 5rem );
+    width: 100vw;
 }
 .formula-action-cont > input{
     border: none;
     outline: none;
+    height: 70%;
 }
 
 .sheet-action-cont{
@@ -102,5 +104,5 @@ body{
 
 }
 .grid-cont{
-    height: calc(100vh - 3rem - 3rem - 3rem - 3rem);
+    height: calc(100vh - 3rem - 3rem - 3rem - 2rem);
 } 
