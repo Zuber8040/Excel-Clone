@@ -59,7 +59,8 @@ body{
 } 
 .address-bar{
    width: 5rem;
-}
+    text-align: center;
+}   
 
 .formula-bar{
     width: 100vw;
@@ -125,8 +126,8 @@ body{
 .address-row-cont{
     display: flex;  
     position: sticky;
-    top: 0.01rem;
-    left: 0;
+    top: 0;
+    left: 2rem;
 
 }
 .cells-cont{
@@ -155,11 +156,11 @@ body{
 }
 .row-cont{
     display:flex;
+    
 }
-.ceil{
+.cell{
     height: 2rem;
     width: 5rem;
     border: 1px solid #dfe4ea;
-
-    
+    outline: none;
 }
