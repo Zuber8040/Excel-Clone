@@ -42,6 +42,9 @@ body{
     border-radius: 1px;
     outline:none;
 }
+.cellprops-actions-cont >*:hover{
+    cursor: pointer;
+}
 .formula-action-cont{
     height: 2rem;
     background-color:#ecf0f1;
@@ -84,7 +87,7 @@ body{
 }
 .sheet-action-cont>*{
     display: inline-block;
-}  
+} 
 .sheet-add-icon{
     margin-left: 0.3rem;
     margin-right: 0.3rem;
