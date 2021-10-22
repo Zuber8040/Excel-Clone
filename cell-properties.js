@@ -10,17 +10,18 @@ let sheetDB = [];  // it stored all the actions
 for(let i=0;i<rows;i++){
     let sheetRow =[];  // it stored every cell obj stored here
     for(let j=0;j<cols;j++){
-
         // properties of cell 
         let cellProp={
             bold: false,
             italic :false,
-            underline:false,
+            underline:false,    
             alignment :"left",
             fontFamily : "monospace",
             fontSize :"14",
             fontColor:"#000000",
             BGcolor :"#000000",  // Just for indication purpose 
+            value :"",
+            formula : "",
         }
         sheetRow.push(cellProp);
     }   
@@ -105,6 +106,88 @@ BGcolor.addEventListener("change", (e) => {
     cell.style.backgroundColor = cellProp.BGcolor;
     BGcolor.value = cellProp.BGcolor;
 })
+
+alignment.forEach((aligElem)=>{
+    aligElem.addEventListener("click",(e)=>{
+        let address = addressBar.value;
+        let [cell, cellProp] = getCellAndCellProp(address);
+
+        let alignValue  = e.target.classList[0];
+        cellProp.alignment = alignValue;  //Data change 
+
+        cell.style.textAlign  = alignValue;   //U change in part 1
+
+        switch(alignValue){  // ui change in part 2
+            case "left ":
+                leftAlign.style.backgroundColor = activeColorProp;
+                centerAlign.style.backgroundColor = inactiveColorProp;
+                rightAlign.style.backgroundColor = inactiveColorProp;
+                break;
+            case "center":
+                leftAlign.style.backgroundColor = inactiveColorProp;
+                centerAlign.style.backgroundColor = activeColorProp;
+                rightAlign.style.backgroundColor = inactiveColorProp;
+                break;
+            case  "right":
+                leftAlign.style.backgroundColor = inactiveColorProp;
+                centerAlign.style.backgroundColor = inactiveColorProp;
+                rightAlign.style.backgroundColor = activeColorProp;
+                break;
+        }
+    })
+})
+
+let allCells = document.querySelectorAll(".cell");
+for (let i = 0;i < allCells.length;i++) {
+    addListenerToAttachCellProperties(allCells[i]);
+}
+
+function addListenerToAttachCellProperties(cell) {
+    // Work
+    cell.addEventListener("click", (e) => {
+        let address = addressBar.value;
+        let [rid, cid] = decodeRIDCIDFromAddress(address);
+        let cellProp = sheetDB[rid][cid];   
+
+        // Apply cell Properties
+        cell.style.fontWeight = cellProp.bold ? "bold" : "normal";
+        cell.style.fontStyle = cellProp.italic ? "italic" : "normal";
+        cell.style.textDecoration = cellProp.underline ? "underline" : "none";
+        cell.style.fontSize = cellProp.fontSize + "px";
+        cell.style.fontFamily = cellProp.fontFamily;
+        cell.style.color = cellProp.fontColor;
+        cell.style.backgroundColor = cellProp.BGcolor === "#000000" ? "transparent" : cellProp.BGcolor;
+        cell.style.textAlign = cellProp.alignment;
+                
+
+        // Apply properties UI Props container
+        bold.style.backgroundColor = cellProp.bold ? activeColorProp : inactiveColorProp;
+        italic.style.backgroundColor = cellProp.italic ? activeColorProp : inactiveColorProp;
+        underline.style.backgroundColor = cellProp.underline ? activeColorProp : inactiveColorProp;
+        fontColor.value = cellProp.fontColor;
+        BGcolor.value = cellProp.BGcolor;
+        fontSize.value = cellProp.fontSize;
+        fontFamily.value = cellProp.fontFamily;
+        switch(cellProp.alignment) { // UI change (2)
+            case "left":
+                leftAlign.style.backgroundColor = activeColorProp;
+                centerAlign.style.backgroundColor = inactiveColorProp;
+                rightAlign.style.backgroundColor = inactiveColorProp;
+                break;
+            case "center":
+                leftAlign.style.backgroundColor = inactiveColorProp;
+                centerAlign.style.backgroundColor = activeColorProp;
+                rightAlign.style.backgroundColor = inactiveColorProp;
+                break;
+            case "right":
+                leftAlign.style.backgroundColor = inactiveColorProp;
+                centerAlign.style.backgroundColor = inactiveColorProp;
+                rightAlign.style.backgroundColor = activeColorProp;
+                break;
+        }
+    });
+}
+
 
 function getCellAndCellProp(address){
     let [rid, cid] = decodeRIDCIDFromAddress(address);
