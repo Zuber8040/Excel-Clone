@@ -185,6 +185,9 @@ function addListenerToAttachCellProperties(cell) {
                 rightAlign.style.backgroundColor = activeColorProp;
                 break;
         }
+        let formulaBar = document.querySelector(".formula-bar");
+        formulaBar.value = cellProp.formula;
+        cell.innerText = cellProp.value;
     });
 }
 
@@ -194,14 +197,13 @@ function getCellAndCellProp(address){
     // Access cell & storage object
     let cell = document.querySelector(`.cell[rid="${rid}"][cid="${cid}"]`);
     let cellProp = sheetDB[rid][cid];
-    return [cell, cellProp];
-
+    return [cell, cellProp]
 }
 function decodeRIDCIDFromAddress(address) {
-    // address -> "A1"
-    let rid = Number(address.slice(1) - 1); // "1" -> 0
-    let cid = Number(address.charCodeAt(0)) - 65; // "A" -> 65
-    return [rid, cid];
+     // address -> "A1"
+     let rid = Number(address.slice(1) - 1); // "1" -> 0
+     let cid = Number(address.charCodeAt(0)) - 65; // "A" -> 65
+     return [rid, cid];
 }
 
 

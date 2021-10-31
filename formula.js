@@ -1,5 +1,3 @@
-
-
 for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
         let cell = document.querySelector(`.cell[rid="${i}"][cid="${j}"]`);
@@ -7,10 +5,10 @@ for (let i = 0; i < rows; i++) {
             let address = addressBar.value;
             let [activeCell, cellProp] = getCellAndCellProp(address);
             let enteredData = activeCell.innerText;
-            cellProp.value=enteredData;
             
+            cellProp.value=enteredData;
         })
-    }
+    }   
 }   
 
 
